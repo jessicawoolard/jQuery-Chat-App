@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from api.serializers import UserSerializer
+from rest_framework import viewsets
 
-# Create your views here.
+
+class DRFViewSet(viewsets.ViewSet):
+    pass
+
+
+
+
