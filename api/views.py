@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from api.serializers import UserSerializer
+# from api.serializers import UserSerializer
 from rest_framework import viewsets
 
 
