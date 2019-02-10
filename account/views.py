@@ -1,5 +1,7 @@
-from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model, authenticate, login, logout
+from django.urls import reverse
+from django.http import HttpResponse
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -7,6 +9,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 from account.forms import SignUpUserCreationForm
+
+User = get_user_model()
 
 
 def signup(request):
@@ -19,9 +23,16 @@ def signup(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('chat:chat/index')
+
+
     else:
         form = SignUpUserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+
+def logout_view(request):
+        logout(request)
+        return redirect('chat:chat/index')
 
 
 # class SignupView(TemplateView):

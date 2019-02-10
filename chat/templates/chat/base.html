@@ -7,12 +7,13 @@
   <body>
     <header>
       <h1>Pow Wow</h1>
-{#      {% if user.is_authenticated %}#}
-{#        <a href="{% url 'logout' %}">logout</a>#}
-{#      {% else %}#}
+      {% if user.is_authenticated %}
+          <p>Hello {{  user.username }}!</p>
+        <a href="{% url 'account:logout' %}">logout</a>
+      {% else %}
         <a href="{% url 'account:login' %}">login</a>
         <a href="{% url 'account:signup' %}">signup</a>
-{#      {% endif %}#}
+      {% endif %}
       <hr>
     </header>
     <main>
