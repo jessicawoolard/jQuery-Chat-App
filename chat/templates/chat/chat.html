@@ -1,0 +1,14 @@
+{% extends 'chat/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="message_container" id="message_container">
+
+        </div>
+        <form class="add-text-form" id="add-text-form">
+            <input type="text" placeholder="Message" id="messages">
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+{% endblock content %}

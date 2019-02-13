@@ -1,11 +1,11 @@
-{% extends 'index.html' %}
+{% extends 'chat/base.html' %}
 
 {% block content %}
     {% load static %}
   <h2>Sign up</h2>
 
      <div class="login">
-        <h1>Create account - Pow Wow</h1>
+        <h1>Create account - KaPow</h1>
          <form enctype='multipart/form-data' id='account-signup-form' method='POST' action="{% url 'account:signup'%}">
              {% csrf_token %}
              <table>
@@ -17,17 +17,16 @@
              </table>
          </form>
      </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-            <script src="{% static 'js/parsley.js' %}"></script>
-     <script>
-                (function($){
-                    $(function(){
-                        $('#account-signup-form').parsley();
-                    });
-                }(jQuery));
-            </script>
-
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
+{#            <script src="{% static 'js/parsley.js' %}"></script>#}
+{#     <script>#}
+                {#(function($){#}
+                {#    $(function(){#}
+                {#        $('#account-signup-form').parsley();#}
+                {#    });#}
+                {# }(jQuery));#}
+{#            </script>#}
 
 {% endblock %}
 

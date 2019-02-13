@@ -1,7 +1,8 @@
-{% extends 'index.html' %}
+{% extends 'chat/base.html' %}
 
 
 {% block content %}
+    <div class="login_signup">
     <h2>Please Login!</h2>
 
     {% if form.errors %}
@@ -31,7 +32,7 @@
         </table>
 
         <input type="submit" value="login">
-        <input type="hidden" name="next" value="{{index}}">
+        <input type="hidden" name="next" value="{% url 'chat:chat' %}">
     </form>
 
     {# Assumes you setup the password_reset view in your URLconf #}
@@ -39,7 +40,7 @@
     <p><a href="{% url 'account:signup' %}">Or Create an Account</a></p>
 
 
-
+</div>
 {% endblock content %}
 
 

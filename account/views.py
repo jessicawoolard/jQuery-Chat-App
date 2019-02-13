@@ -22,7 +22,7 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('chat:chat/index')
+            return redirect('chat:chat')
 
 
     else:
