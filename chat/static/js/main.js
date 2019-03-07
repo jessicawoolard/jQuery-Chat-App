@@ -14,21 +14,9 @@
             }
         }
     });
-    $.ajax('/api/message/', {
-        'error': function (response, error) {
-            console.log('Error Found');
-            // $('body').html('You broke the server');
-                console.log(error, response);
-        },
-        'success':function(data) {
-            console.log('data', data);
 
-            data.forEach(showMessageItem);
-        }
-    });
-
-    function showMessageItem(Message.text){
-      $('#message_container').append('<p>' + Message.text + '</p>');
+    function showMessageItem(Message){
+      $('#message_container').append('<p>' + Message + '</p>');
     }
 
     $('#add-text-form').on('submit', function(event){
@@ -45,14 +33,13 @@
           console.log('success!');
           showMessageItem(data);
         },
-        'error': function(){
+        'error': function(xhr){
+            console.log(xhr.statusText);
         }
       });
-        showMessageItem(data);
+        // showMessageItem(data);
         console.log('Add Message')
     });
-
-
 
     });
 

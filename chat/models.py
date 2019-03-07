@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.utils import timezone
+from django.conf import settings
 
-User = get_user_model()
+# User = get_user_model()
 
 
 class Message(models.Model):
@@ -10,13 +12,6 @@ class Message(models.Model):
     text = models.TextField(default='')
     date = models.DateTimeField(default=timezone.now)
 
-    # def to_data(self):
-    #     out = {}
-    #     out['id'] = self.id
-    #     out['from'] = self.user
-    #     out['date'] = self.date.isoformat()
-    #     out['text'] = self.text
-    #     return out
 
 
 

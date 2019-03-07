@@ -1,14 +1,22 @@
 {% extends 'chat/base.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="message_container" id="message_container">
+    <form method='post' class="add-text-form" id="add-text-form">
+        <div class="container">
+            <div class="message_container" id="message_container">
+                {% for message in messages %}
+                    <div>
+                    {% if message.text %}
+                        <p class="text_message">{{ message.text }}</p>
+                        <p class="message_date">{{ message.date }}</p>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
 
-        </div>
-        <form class="add-text-form" id="add-text-form">
             <input type="text" placeholder="Message" id="messages">
 
             <input type="submit" value="Send">
-        </form>
-    </div>
+        </div>
+    </form>
 {% endblock content %}
