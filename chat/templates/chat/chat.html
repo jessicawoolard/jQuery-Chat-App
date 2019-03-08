@@ -1,21 +1,15 @@
 {% extends 'chat/base.html' %}
 
 {% block content %}
-    <form method='post' class="add-text-form" id="add-text-form">
+    <form method='post' class="add-text-form" id="add-text-form" action="{% url "chat:chat" %}">
+    {% csrf_token %}
         <div class="container">
             <div class="message_container" id="message_container">
-                {% for message in messages %}
-                    <div>
-                    {% if message.text %}
-                        <p class="text_message">{{ message.text }}</p>
-                        <p class="message_date">{{ message.date }}</p>
-                    {% endif %}
-                {% endfor %}
-                </div>
+
             </div>
 
             <input type="text" placeholder="Message" id="messages">
-
+            <input id='user_id' type="hidden" value="{{ user.id }}">
             <input type="submit" value="Send">
         </div>
     </form>
