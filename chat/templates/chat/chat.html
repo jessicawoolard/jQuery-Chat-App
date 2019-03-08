@@ -1,7 +1,8 @@
 {% extends 'chat/base.html' %}
 
 {% block content %}
-    <form method='post' class="add-text-form" id="add-text-form" action="{% url "chat:chat" %}">
+    <form method='post' class="add-text-form" id="add-text-form" action="{% url 'chat:chat' %}" autocomplete='off'>
+    {% load static %}
     {% csrf_token %}
         <div class="container">
             <div class="message_container" id="message_container">
