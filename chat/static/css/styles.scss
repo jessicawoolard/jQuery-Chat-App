@@ -38,12 +38,12 @@ main {
   #username_message {
     font-size: 14PX;
     font-weight: bold;
-    padding: 10px;
+    padding-left: 10px;
   }
 
   #text_message {
     font-size: 20px;
-    padding: 15px;
+    padding-left: 15px;
   }
 
   #date_message {
@@ -51,5 +51,18 @@ main {
     font-style: italic;
     font-size: 10px;
 
+  }
+  .my_message {
+    width: 75%;
+    float: left;
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+
+  }
+  .other_message {
+    width: 75%;
+    float: right;
+    background-color: hotpink;
   }
 }

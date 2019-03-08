@@ -6,7 +6,7 @@
 
      <div class="login">
         <h1>Create account - KaPow</h1>
-         <form enctype='multipart/form-data' id='account-signup-form' method='POST' action="{% url 'account:signup'%}">
+         <form enctype='multipart/form-data' id='account-signup-form' method='POST' action="{% url 'account:signup'%}" autocomplete="off">
              {% csrf_token %}
              <table>
                 {{ form.as_table }}

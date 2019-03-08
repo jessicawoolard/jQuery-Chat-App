@@ -29,16 +29,28 @@ main #message_div {
 main #username_message {
   font-size: 14PX;
   font-weight: bold;
-  padding: 10px;
+  padding-left: 10px;
 }
 main #text_message {
   font-size: 20px;
-  padding: 15px;
+  padding-left: 15px;
 }
 main #date_message {
   margin-left: 100px;
   font-style: italic;
   font-size: 10px;
+}
+main .my_message {
+  width: 75%;
+  float: left;
+  background-color: aqua;
+  margin: 0;
+  padding: 0;
+}
+main .other_message {
+  width: 75%;
+  float: right;
+  background-color: hotpink;
 }
 
 /*# sourceMappingURL=styles.css.map */
